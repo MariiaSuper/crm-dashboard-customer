@@ -1,10 +1,10 @@
 const path = require("path");
 const PugPlugin = require("pug-plugin");
 
-module.exports = {
+const config = {
   output: {
     path: path.join(__dirname, "build/"),
-    publicPath: "/crm-dashboard-customer/",
+    publicPath: "/",
   },
   plugins: [
     new PugPlugin({
@@ -54,4 +54,12 @@ module.exports = {
     },
   },
   stats: "errors-only",
+};
+
+module.exports = (env, argv) => {
+  if (argv.mode === "production") {
+    config.output.publicPath = "/crm-dashboard-customer/";
+  }
+
+  return config;
 };
