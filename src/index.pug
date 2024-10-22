@@ -1,5 +1,22 @@
 include ./Sidebar.pug
 
+// mixin addRow(name, company, phone, email, country, status)
+mixin addRow(name, company, phone, email, country, status)
+  tr
+    td.column-name__name= name
+    td.column-name__company= company
+    td.column-name__phone= phone
+    td.column-name__email= email
+    td.column-name__country= country
+    td.column-name__status
+      case status
+        when 'Active'
+          .customers__table--align-center
+            button.customers__status.customers__status--active Active
+        default
+          .customers__table--align-center
+            button.customers__status.customers__status--inactive Inactive
+
 doctype html
 html(lang="en")
   head
@@ -27,86 +44,22 @@ html(lang="en")
           table.customers__table
             thead
               tr
-                th Customer Name
-                th Company
-                th Phone Number
-                th Email
-                th Country
-                th
+                th.column-name__name Customer Name
+                th.column-name__company Company
+                th.column-name__phone Phone Number
+                th.column-name__email Email
+                th.column-name__country Country
+                th.column-name__status
                   .customers__table--align-center Status
             tbody
-              tr
-                td Jane Cooper
-                td Microsoft
-                td (225) 555-0118
-                td jane@microsoft.com
-                td United States
-                td
-                  .customers__table--align-center
-                    button.customers__status.customers__status--active Active
-              tr
-                td Floyd Miles
-                td Yahoo
-                td (205) 555-0100
-                td floyd@yahoo.com
-                td Kiribati
-                td
-                  .customers__table--align-center
-                    button.customers__status.customers__status--inactive Inactive
-              tr
-                td Ronald Richards
-                td Adobe
-                td (302) 555-0107
-                td ronald@adobe.com
-                td Israel
-                td
-                  .customers__table--align-center
-                    button.customers__status.customers__status--inactive Inactive
-              tr
-                td Marvin McKinney
-                td Tesla
-                td (252) 555-0126
-                td marvin@tesla.com
-                td Iran
-                td
-                  .customers__table--align-center
-                    button.customers__status.customers__status--active Active
-              tr
-                td Jerome Bell
-                td Google
-                td (629) 555-0129
-                td jerome@google.com
-                td Reúnion
-                td
-                  .customers__table--align-center
-                    button.customers__status.customers__status--active Active
-              tr
-                td Kathryn Murphy
-                td Microsoft
-                td (406) 555-0120
-                td kathryn@microsoft.com
-                td Curaçao
-                td
-                  .customers__table--align-center
-                    button.customers__status.customers__status--active Active
-              tr
-                td Jacob Jones
-                td Yahoo
-                td (208) 555-0112
-                td jacob@yahoo.com
-                td Brasil
-                td
-                  .customers__table--align-center
-                    button.customers__status.customers__status--active Active
-              tr
-                td Kristin Watson
-                td Facebook
-                td (704) 555-0127
-                td kristin@facebook.com
-                td Åland Island
-                td
-                  .customers__table--align-center
-                    button.customers__status.customers__status--inactive Inactive
+              +addRow('Jane Cooper', 'Microsoft', '(225) 555-0118', 'jane@microsoft.com', 'United States', 'Active')
+              +addRow('Floyd Miles', 'Yahoo', '(205) 555-0100', 'floyd@yahoo.com', 'Kiribati', 'Inactive')
+              +addRow('Ronald Richards', 'Adobe', '(302) 555-0107', 'ronald@adobe.com', 'Israel', 'Inactive')
+              +addRow('Marvin McKinne', 'Tesla', '(252) 555-0126', 'marvin@tesla.com', 'Iran', 'Active')
+              +addRow('Jerome Bell', 'Google', '(629) 555-0129', 'jerome@google.com', 'Reúnion', 'Active')
+              +addRow('Kathryn Murphy', 'Microsoft', '(406) 555-0120', 'kathryn@microsoft.com', 'Curaçao', 'Active')
+              +addRow('Jacob Jones', 'Yahoo', '(208) 555-0112', 'jacob@yahoo.com', 'Brasil', 'Active')
+              +addRow('Kristin Watson', 'Facebook', '(704) 555-0127', 'kristin@facebook.com', 'Åland Island', 'Inactive')
           .customers__summary
             .customers__summary--row-count Showing data 1 to 8 of 256K entries
             ul.customers__summary--pagination
