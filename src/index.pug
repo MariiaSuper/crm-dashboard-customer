@@ -1,0 +1,119 @@
+include ./Sidebar.pug
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title CRM Dashboard Customer
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap")
+    link(rel="stylesheet", href="styles.scss")
+  body
+    .container
+      +Sidebar
+      .main-content
+        header.main-content__header
+          h1.main-content__title Hello Evano 👋🏼,
+        .customers
+          .customers__header
+            .customers__title
+              h2.customers__title-name All Customers
+              span.customers__title-subname Active Members
+            .customers__search
+              input(placeholder='Search')
+              include ../assets/icons/search.svg
+          table.customers__table
+            thead
+              tr
+                th Customer Name
+                th Company
+                th Phone Number
+                th Email
+                th Country
+                th
+                  .customers__table--align-center Status
+            tbody
+              tr
+                td Jane Cooper
+                td Microsoft
+                td (225) 555-0118
+                td jane@microsoft.com
+                td United States
+                td
+                  .customers__table--align-center
+                    button.customers__status.customers__status--active Active
+              tr
+                td Floyd Miles
+                td Yahoo
+                td (205) 555-0100
+                td floyd@yahoo.com
+                td Kiribati
+                td
+                  .customers__table--align-center
+                    button.customers__status.customers__status--inactive Inactive
+              tr
+                td Ronald Richards
+                td Adobe
+                td (302) 555-0107
+                td ronald@adobe.com
+                td Israel
+                td
+                  .customers__table--align-center
+                    button.customers__status.customers__status--inactive Inactive
+              tr
+                td Marvin McKinney
+                td Tesla
+                td (252) 555-0126
+                td marvin@tesla.com
+                td Iran
+                td
+                  .customers__table--align-center
+                    button.customers__status.customers__status--active Active
+              tr
+                td Jerome Bell
+                td Google
+                td (629) 555-0129
+                td jerome@google.com
+                td Reúnion
+                td
+                  .customers__table--align-center
+                    button.customers__status.customers__status--active Active
+              tr
+                td Kathryn Murphy
+                td Microsoft
+                td (406) 555-0120
+                td kathryn@microsoft.com
+                td Curaçao
+                td
+                  .customers__table--align-center
+                    button.customers__status.customers__status--active Active
+              tr
+                td Jacob Jones
+                td Yahoo
+                td (208) 555-0112
+                td jacob@yahoo.com
+                td Brasil
+                td
+                  .customers__table--align-center
+                    button.customers__status.customers__status--active Active
+              tr
+                td Kristin Watson
+                td Facebook
+                td (704) 555-0127
+                td kristin@facebook.com
+                td Åland Island
+                td
+                  .customers__table--align-center
+                    button.customers__status.customers__status--inactive Inactive
+          .customers__summary
+            .customers__summary--row-count Showing data 1 to 8 of 256K entries
+            ul.customers__summary--pagination
+              li.page-item.page-item--back <
+              li.page-item.page-item--active 1
+              li.page-item 2
+              li.page-item 3
+              li.page-item 4
+              li.page-item.page-item--dots ...
+              li.page-item 40
+              li.page-item.page-item--back >
+

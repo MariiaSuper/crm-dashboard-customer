@@ -1,0 +1,56 @@
+mixin Sidebar
+  .sidebar
+    .sidebar__logo
+      include ../assets/icons/setting.svg
+      .sidebar__logo-description
+        .sidebar__logo-text Dashboard
+        .sidebar__logo-version v.01
+    nav.sidebar__menu
+      ul
+        li.sidebar__menu-item
+          a(href="#")
+            .sidebar__menu-item--icon
+              include ../assets/icons/dashboard.svg
+            |  Dashboard
+        li.sidebar__menu-item
+          a(href="#")
+            .sidebar__menu-item--icon
+              include ../assets/icons/product.svg
+            |  Product
+            .sidebar__menu-item--expand-icon
+              include ../assets/icons/chevron-right.svg
+        li.sidebar__menu-item.sidebar__menu-item--active
+          a(href="#")
+            .sidebar__menu-item--icon
+              include ../assets/icons/customers.svg
+            |  Customers
+            .sidebar__menu-item--expand-icon
+              include ../assets/icons/chevron-right.svg
+        li.sidebar__menu-item
+          a(href="#")
+            .sidebar__menu-item--icon
+              include ../assets/icons/income.svg
+            |  Income
+            .sidebar__menu-item--expand-icon
+              include ../assets/icons/chevron-right.svg
+        li.sidebar__menu-item
+          a(href="#")
+            .sidebar__menu-item--icon
+              include ../assets/icons/promote.svg
+            |  Promote
+            .sidebar__menu-item--expand-icon
+              include ../assets/icons/chevron-right.svg
+        li.sidebar__menu-item
+          a(href="#")
+            .sidebar__menu-item--icon
+              include ../assets/icons/help.svg
+            |  Help
+            .sidebar__menu-item--expand-icon
+              include ../assets/icons/chevron-right.svg
+    .user-info
+      .user-info__picture
+        img(src='../assets/photo.png')
+      .user-info__title
+        .user-info__title-name Evano
+        .user-info__title-position Project Manager
+
