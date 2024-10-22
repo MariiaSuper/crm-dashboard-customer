@@ -3,8 +3,8 @@ const PugPlugin = require("pug-plugin");
 
 module.exports = {
   output: {
-    path: path.join(__dirname, "dist/"),
-    publicPath: "/",
+    path: path.join(__dirname, "build/"),
+    publicPath: "/crm-dashboard-customer/",
   },
   plugins: [
     new PugPlugin({
@@ -45,7 +45,7 @@ module.exports = {
     ],
   },
   devServer: {
-    static: path.join(__dirname, "dist"),
+    static: path.join(__dirname, "build"),
     watchFiles: {
       paths: ["src/**/*.*", "assets/**/*.*"],
       options: {
