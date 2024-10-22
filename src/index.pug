@@ -13,6 +13,8 @@ html(lang="en")
       +Sidebar
       .main-content
         header.main-content__header
+          .sidebar-toggle--open
+            include ../assets/icons/setting.svg
           h1.main-content__title Hello Evano 👋🏼,
         .customers
           .customers__header
@@ -117,3 +119,4 @@ html(lang="en")
               li.page-item 40
               li.page-item.page-item--back >
 
+    script(src="index.js", type="module")

@@ -4,6 +4,8 @@
   box-sizing: border-box;
 }
 
+$md: 1024px;
+
 input,
 textarea,
 select {
@@ -55,10 +57,44 @@ body {
   padding: 36px 26px 76px 28px;
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s ease;
+
+  transform: translateX(0);
+
+  @media screen and (max-width: $md) {
+    transform: translateX(-306px);
+    position: absolute;
+  }
+
+  &.sidebar--open {
+    @media screen and (max-width: $md) {
+      transform: translateX(0);
+      z-index: 10;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .sidebar-toggle--close {
+    display: none;
+
+    @media screen and (max-width: $md) {
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      display: block;
+      width: 24px;
+      height: 24px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+  }
 
   &__logo {
     display: flex;
     align-items: center;
+    position: relative;
 
     svg {
       margin-right: 8px;
@@ -164,6 +200,29 @@ body {
   flex-direction: column;
   padding: 41px 95px 0 71px;
 
+  @media screen and (max-width: $md) {
+    padding: 15px;
+  }
+
+  &__header {
+    display: flex;
+  }
+
+  .sidebar-toggle--open {
+    display: none;
+
+    @media screen and (max-width: $md) {
+      display: block;
+      width: 24px;
+      height: 24px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      margin-right: 20px;
+    }
+  }
+
   &__header {
     font-size: 24px;
     height: 36px;
@@ -180,6 +239,10 @@ body {
     margin-top: 51px;
     border-radius: 30px;
     padding: 30px 44px 40px 38px;
+
+    @media screen and (max-width: $md) {
+      padding: 16px;
+    }
 
     &__header {
       display: flex;
